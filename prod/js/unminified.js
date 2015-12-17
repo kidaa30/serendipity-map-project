@@ -9521,16 +9521,28 @@ var g = svg.append('g')
                   .on("zoom", zoom)
         );
 
-d3.csv( 'data/stations3.csv' , function(error, data) {
+d3.csv( 'data/stations4.csv' , function(error, data) {
 
   if (error) {
     console.log(error);
   } else {
     _data = data;
     render();
-  }
+  } 
 
 });
+
+// Hide and show station dots based on user interaction
+function filter(){
+  dots.filter(function(d) { 
+      if (d['Core Publisher']==0) { 
+        return this;
+      } else {
+        return null;
+      }
+    })
+    .classed('hidden', true);
+};
 
 function render(){
 
@@ -9563,7 +9575,7 @@ function render(){
       div.transition()        
         .duration(200)      
         .style("opacity", .9); 
-      div.html("<h3>" + d.name + 
+      div.html("<h3>" + d.name + ', ' + d.TSR + 
           "</h3><img src='http://media.npr.org/images/stations/logos/" + 
           d.name.toLowerCase().replace('-','_') + ".gif'>")  
         .style("left", (d3.event.pageX) + "px")     
@@ -9593,7 +9605,6 @@ function render(){
       nx2 = node.attr("cx") + r,
       ny1 = node.attr("cy") - r,
       ny2 = node.attr("cy") + r;
-    console.log(r);
   })
 
 };
