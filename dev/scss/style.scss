@@ -1,0 +1,47 @@
+@import 'modules/normalize';
+@import 'modules/variables';
+@import 'modules/mixins';
+@import 'modules/base';
+@import 'modules/layout';
+
+body {
+	padding: 0 calc(50% - 600px);
+}
+
+path {
+  fill: #bed3de;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+circle {
+	mix-blend-mode: multiply;
+}
+
+circle:hover {
+  cursor: pointer;
+}
+
+.active {
+	fill: red;
+}
+
+.pointer {
+	mix-blend-mode: multiply;
+	stroke: hsla(205,75%,60%,1);
+	stroke-width: 2px;
+}
+
+.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 260px;                  
+  height: 128px;                 
+  padding: 2px;             
+  font: 12px sans-serif;        
+  background: white;   
+  border: 0px;      
+  border-radius: 8px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);           
+  pointer-events: none;         
+}
