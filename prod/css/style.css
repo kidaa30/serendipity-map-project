@@ -531,9 +531,9 @@ img[src='Error.src'] {
 }
 
 .radio-group {
-  font-size: 14px;
+  font-size: 18px;
   padding: 1em;
-  text-align: center;
+  text-align: left;
   background: white;
 }
 .radio-group label {

@@ -229,7 +229,7 @@ var View = {
 
     var scale = d3.scale.linear(),
         domain = scale.domain([min, max]),
-        range = scale.range([5, 30]);
+        range = scale.range([2, 36]);
      
     dots.enter()
       .append("circle")
@@ -268,7 +268,7 @@ var View = {
 
     var scale = d3.scale.linear(),
         domain = scale.domain([min, max]),
-        range = scale.range([5, 30]);
+        range = scale.range([2, 36]);
      
     dots.enter()
       .append("circle")
