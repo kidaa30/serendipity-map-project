@@ -421,10 +421,17 @@ path {
 
 circle {
   mix-blend-mode: multiply;
+  opacity: 1.0;
+  transition: opacity .25s;
 }
 
 circle:hover {
   cursor: pointer;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .active {
@@ -439,20 +446,99 @@ circle:hover {
 
 .tooltip {
   position: absolute;
-  text-align: center;
   width: 260px;
   height: 128px;
-  padding: 2px;
+  padding: 10px 20px 20px 10px;
   font: 12px sans-serif;
+  text-align: center;
   background: white;
   border: 0px;
   border-radius: 8px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
   pointer-events: none;
 }
+.tooltip h3 {
+  font-size: 16px;
+  margin: 0 0 6px 0;
+  text-align: left;
+}
+.tooltip h5 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #666;
+  font-weight: normal;
+  text-align: left;
+}
 
-.hidden {
-  display: none;
+img[src='Error.src'] {
+  background: pink;
+}
+
+.navigation {
+  width: 100%;
+  margin: 2em auto;
+  background: #eee;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.menu > li {
+  flex: 1 1 auto;
+  padding: 1em 2em;
+  cursor: pointer;
+  text-align: center;
+}
+.menu > li:hover {
+  background: yellow;
+}
+.menu > li:first-of-type {
+  font-weight: bold;
+  background: #222;
+  color: #eee;
+  text-align: left;
+}
+
+.menu li.active {
+  background: #4da6e6;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+}
+.menu li.active:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  content: '';
+  border-color: transparent;
+  border-top-color: #4da6e6;
+  border-width: 15px;
+  margin-left: -15px;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.radio-group {
+  font-size: 14px;
+  padding: 1em;
+  text-align: center;
+  background: white;
+}
+.radio-group label {
+  display: inline;
+  margin: 0 2em 0 0.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

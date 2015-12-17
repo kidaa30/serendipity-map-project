@@ -1,28 +1,43 @@
 <!doctype html>
 <html class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <!--
-    live reload script
-    (comment this out) build:remove
+  <!--
+  live reload script
+  (comment this out) build:remove
+  <script src="http://localhost:35729/livereload.js"></script>
+  (comment this out) /build
+  -->
+
+  <!-- build:remove -->
     <script src="http://localhost:35729/livereload.js"></script>
-    (comment this out) /build
-    -->
+  <!-- /build -->
+  
+  <script src="dev/js/libs/topojson.js"></script>
+  <script src="dev/js/libs/d3.min.js"></script>
 
-    <!-- build:remove -->
-      <script src="http://localhost:35729/livereload.js"></script>
-    <!-- /build -->
-    
-    <script src="dev/js/libs/topojson.js"></script>
-    <script src="dev/js/libs/d3.min.js"></script>
-
-    <title>wall</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="prod/css/style.css">
+  <title>wall</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="prod/css/style.css">
 </head>
 <body>
+  
+  <nav class="navigation">
+    <div class="radio-group">
+      <span class="label">Base Bubble Size On:</span>
+      <input type="radio" name="data-type" value="TSR" id="tsr" checked><label for="tsr">Station's TSR</label> 
+      <input type="radio" name="data-type" value="products" id="products"><label for="products">Total Products Used By Station</label>
+    </div>
+    <ul class="menu">
+      <li>Filters:</li>
+      <li data-filter="all">All Stations</li>
+      <li data-filter="corepub">Core Publisher Stations</li>
+      <li data-filter="composer">Composer Pro</li>
+      <li data-filter="springboard">Springboard</li>
+    </ul>
+  </nav> 
 
       
   <script src="dev/js/libs/jquery.js"></script>
